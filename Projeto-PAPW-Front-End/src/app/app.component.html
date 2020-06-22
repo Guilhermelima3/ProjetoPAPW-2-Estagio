@@ -1,0 +1,41 @@
+<div>
+  <div class="row">
+    <div class="col-md-2">
+      <app-lista-produto></app-lista-produto>
+    </div>
+    <div *ngIf="isOnline" style="color: white;">Testttttt</div>
+    <div class="col-md-10 nav-principal" style="padding-top: 20px;padding-left: 30%; position: fixed;">
+      <ul class="nav justify-content-center">
+        <li class="nav-item nav-menu-item"  (click)="mostrarForm(1)" [ngClass]="{'ativada-menu': mostrarLogin == true}">
+          <a class="nav-link active" href="#"><img src="assets/menu_icons/pedido_icon_menu.png"></a>
+        </li>
+        <li class="nav-item nav-menu-item" (click)="mostrarForm(4)" [ngClass]="{'ativada-menu': mostrarCarrinho == true} ">
+          <a class="nav-link active" href="#"><img src="assets/menu_icons/carrinho_icon_menu.png"></a>
+        </li>
+        <li class="nav-item nav-menu-item"  (click)="mostrarForm(2)" [ngClass]="{'ativada-menu': mostrarRegister == true}">
+          <a class="nav-link active" href="#"><img src="assets/menu_icons/profile_icon_menu.png"></a>
+        </li>
+        <li class="nav-item nav-menu-item" (click)="mostrarForm(3)" [ngClass]="{'ativada-menu': mostrarPessoas == true}">
+          <a class="nav-link active" href="#"><img src="assets/menu_icons/user_list_icon.png"></a>
+        </li>
+        <li class="nav-item nav-menu-item" (click)="mostrarForm(3)">
+          <a class="nav-link active" href="#"><img src="assets/menu_icons/logout_icon_menu.png"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="container" style="padding: 200px;padding-top: 0px;margin-top: 10%;padding-left: 0px;text-align: center">
+      <div [ngClass]="{'ativada': mostrarLogin == false}">
+        <app-registrar-usuario></app-registrar-usuario>
+      </div>
+      <div  [ngClass]="{'ativada': mostrarCarrinho == false}">
+        <app-lista-item-carrinho></app-lista-item-carrinho>
+      </div>
+      <div [ngClass]="{'ativada': mostrarRegister == false}">
+        <app-auth-config></app-auth-config>
+      </div>
+      <div [ngClass]="{'ativada': mostrarPessoas == false}">
+        <app-lista-pessoa></app-lista-pessoa>
+      </div>
+    </div>
+  </div>
+</div>
